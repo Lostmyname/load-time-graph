@@ -1,11 +1,11 @@
-# YOUR COMPONENT HERE
+# Load time graph
 
-C'mon, write a readme.
+A graph displaying the load time of the website on the Good 3G option in the
+Chrome development tools. It's pretty slow right now, so this provides
+motivation to speed it up!
+
+Most of the data right now is just dummy data.
 
 ## Installation
-
-Use through npm.
-
-### Development
 
 Run `gulp` to generate the CSS and JS and start browser-sync.
