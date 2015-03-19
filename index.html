@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lostmy.name load times</title>
+
+  <link rel="stylesheet" href="demo/build/stylesheets/styles.css">
+</head>
+<body>
+
+
+  <header class="inline-align-center xl-mar-t">
+    <h1>lostmy.name load times</h1>
+    <h6>front-end load times on mobile</h6>
+  </header>
+
+  <div class="container lg-mar-t" style="max-width: 850px">
+    <p>
+      After releasing Mermaid, the page load times for
+      <a href="http://lostmy.name/">lostmy.name</a> grew to a pretty huge sixteen
+      seconds on a fast 3G connection. This is not okay—this website will track
+      the page load times on a fast 3G connection (both from the cache and not
+      from the cache) daily so that we have a motivation to improve it, and so
+      that it doesn't happen again.
+    </p>
+
+    <p><strong>
+      Page load time directly affects conversion.
+      <a href="https://blog.kissmetrics.com/loading-time/" class="text-xs">
+        <sup>[0]</sup>
+      </a>
+    </strong></p>
+
+    <p>
+      We're also going to track the time until the above-the-fold (lol) content
+      is all visible and usable. This is pretty subjective: the developer tools
+      can't track this, so it's pretty much just me testing with a stopwatch.
+    </p>
+
+    <p>
+      All tests are ran on production with the network throttling set to "Good
+      3G (1 Mbps 40ms RTT)" in the Chrome development tools. The above-the-fold
+      test is ran on the iPhone 6 emulator in the Chrome development tools.
+    </p>
+
+    <p>
+      Our target load time on a fast 3G connection without any cached content is
+      <strong>7 seconds</strong>.
+    </p>
+
+    <h4 class="lg-mar-t">Load times, uncached and cached</h4>
+    <div class="[ ct-chart ct-octave ] chart-load"></div>
+
+    <h4 class="lg-mar-t">Time until displayed</h4>
+    <div class="[ ct-chart ct-octave ] chart-display"></div>
+  </div>
+
+
+  <script src="demo/build/js/bundle.js"></script>
+</body>
+</html>

@@ -9,10 +9,6 @@ var buildPath = './demo/build/';
 
 gulp.task('auto-reload', loadLmnTask('auto-reload'));
 
-gulp.task('html', loadLmnTask('html', {
-  langBase: 'component.load-time-graph'
-}));
-
 gulp.task('js', ['js-quality'], loadLmnTask('browserify', {
   src: './src/js/load-time-graph.js',
   dest: path.join(buildPath, 'js/bundle.js')
@@ -28,14 +24,13 @@ gulp.task('scss', loadLmnTask('scss', {
   imagePath: '../images'
 }));
 
-gulp.task('build', ['html', 'js', 'scss']);
+gulp.task('build', ['js', 'scss']);
 
 gulp.task('default', ['build'], function () {
   var config = {
     server: {
       baseDir: '.'
     },
-    startPath: '/demo/partials/partial.html',
     ghostMode: {
       scroll: false,
       links: false,
