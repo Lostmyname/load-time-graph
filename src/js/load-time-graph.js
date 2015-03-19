@@ -1,14 +1,33 @@
-window.Component = module.exports = (function () {
-  'use strict';
+'use strict';
 
-  /**
-   * Your documentation here. Not optional!
-   */
-  function Component() {
+var Chartist = require('chartist');
+var util = require('./util');
+
+var data = util.takeRight(require('../data.json').data, 30);
+
+var options = {
+  low: 0,
+  axisY: {
+    labelInterpolationFnc: function (value) {
+      return value + 's';
+    }
   }
+};
 
-  Component.CONSTANT = 7;
-//  Component._dependency = require('./blablabla');
+var loadData = {
+  labels: util.pluck(data, 'label'),
+  series: [
+    util.pluck(data, 'uncached'),
+    util.pluck(data, 'cached')
+  ]
+};
 
-  return Component;
-})();
+var displayData = {
+  labels: util.pluck(data, 'label'),
+  series: [
+    util.pluck(data, 'display')
+  ]
+};
+
+new Chartist.Line('.chart-load', loadData, options);
+new Chartist.Line('.chart-display', displayData, options);

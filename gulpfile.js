@@ -28,20 +28,7 @@ gulp.task('scss', loadLmnTask('scss', {
   imagePath: '../images'
 }));
 
-gulp.task('responsive-images', loadLmnTask('responsive-images', {
-  src: './src/**/*.{png,jpg,gif}',
-  dest: path.join(buildPath, 'images'),
-  lossless: true
-}));
-
-gulp.task('optimise-svgs', loadLmnTask('optimise-svgs', {
-  src: './src/**/*.svg',
-  dest: path.join(buildPath, 'images'),
-  flatten: true
-}));
-
-gulp.task('images', ['responsive-images', 'optimise-svgs']);
-gulp.task('build', ['images', 'html', 'js', 'scss']);
+gulp.task('build', ['html', 'js', 'scss']);
 
 gulp.task('default', ['build'], function () {
   var config = {
@@ -69,7 +56,7 @@ gulp.task('default', ['build'], function () {
   ], config);
 
   gulp.watch('./src/scss/**/*.{sass,scss}', ['scss']);
-  gulp.watch('./src/js/**/*.js', ['js']);
+  gulp.watch('./src/**/*.js{on,}', ['js']);
   gulp.watch('./src/partials/partial.erb.html', ['html']);
   gulp.watch('./demo/base.erb.html', ['html']);
 });
