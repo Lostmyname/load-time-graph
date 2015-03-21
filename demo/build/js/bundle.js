@@ -3388,7 +3388,8 @@ return Chartist;
 module.exports={
   "data": [
     { "label": "19/3", "uncached": 14.55, "cached": 2.28, "display": 4.3 },
-    { "label": "20/3", "uncached": 14.51, "cached": 2.33, "display": 4.1 }
+    { "label": "20/3", "uncached": 14.51, "cached": 2.33, "display": 4.1 },
+    { "label": "21/3", "uncached": 14.08, "cached": 2.32, "display": 3.3 }
   ]
 }
 
