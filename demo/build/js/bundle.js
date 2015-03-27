@@ -3394,7 +3394,8 @@ module.exports={
     { "label": "23/3", "uncached": 14.14, "cached": 2.22, "display": 3.3 },
     { "label": "24/3", "uncached": 13.92, "cached": 2.04, "display": 3.3 },
     { "label": "25/3", "uncached": 13.82, "cached": 2.14, "display": 3.4 },
-    { "label": "26/3", "uncached": 8.75, "cached": 2.65, "display": 3.8 }
+    { "label": "26/3", "uncached": 13.80, "cached": 2.20, "display": 3.1 },
+    { "label": "27/3", "uncached": 8.45, "cached": 2.09, "display": 2.9 }
   ]
 }
 
