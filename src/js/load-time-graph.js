@@ -11,7 +11,8 @@ var options = {
     labelInterpolationFnc: function (value) {
       return value + 's';
     }
-  }
+  },
+  lineSmooth: false
 };
 
 var loadData = {
