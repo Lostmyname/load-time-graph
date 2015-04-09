@@ -3395,7 +3395,9 @@ module.exports={
     { "label": "24/3", "uncached": 13.92, "cached": 2.04, "display": 3.3 },
     { "label": "25/3", "uncached": 13.82, "cached": 2.14, "display": 3.4 },
     { "label": "26/3", "uncached": 13.80, "cached": 2.20, "display": 3.1 },
-    { "label": "27/3", "uncached": 8.45, "cached": 2.09, "display": 2.9 }
+    { "label": "27/3", "uncached": 8.45, "cached": 2.09, "display": 2.9 },
+    { "label": "07/5", "uncached": 8.62, "cached": 2.24, "display": 3.1 },
+    { "label": "09/5", "uncached": 8.57, "cached": 2.20, "display": 2.6 }
   ]
 }
 
@@ -3413,7 +3415,8 @@ var options = {
     labelInterpolationFnc: function (value) {
       return value + 's';
     }
-  }
+  },
+  lineSmooth: false
 };
 
 var loadData = {
