@@ -10,6 +10,7 @@
     { "label": "26/3", "uncached": 13.80, "cached": 2.20, "display": 3.1 },
     { "label": "27/3", "uncached": 8.45, "cached": 2.09, "display": 2.9 },
     { "label": "07/5", "uncached": 8.62, "cached": 2.24, "display": 3.1 },
-    { "label": "09/5", "uncached": 8.57, "cached": 2.20, "display": 2.6 }
+    { "label": "09/5", "uncached": 8.57, "cached": 2.20, "display": 2.6 },
+    { "label": "10/5", "uncached": 8.63, "cached": 2.22, "display": 2.4 }
   ]
 }
