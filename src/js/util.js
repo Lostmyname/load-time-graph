@@ -2,6 +2,20 @@
 
 var util = module.exports = {};
 
+util.getJson = function (url, cb) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.responseType = 'json';
+
+  xhr.onload = function () {
+    cb(xhr.response, xhr);
+  };
+
+  xhr.send();
+
+  return xhr;
+};
+
 util.map = function (ary, fn) {
   return ary.map(fn);
 };
