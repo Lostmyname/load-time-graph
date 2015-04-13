@@ -3385,64 +3385,61 @@ return Chartist;
 }));
 
 },{}],2:[function(require,module,exports){
-module.exports={
-  "data": [
-    { "label": "19/3", "uncached": 14.55, "cached": 2.28, "display": 4.3 },
-    { "label": "20/3", "uncached": 14.51, "cached": 2.33, "display": 4.1 },
-    { "label": "21/3", "uncached": 14.08, "cached": 2.32, "display": 3.3 },
-    { "label": "22/3", "uncached": 14.13, "cached": 2.44, "display": 3.3 },
-    { "label": "23/3", "uncached": 14.14, "cached": 2.22, "display": 3.3 },
-    { "label": "24/3", "uncached": 13.92, "cached": 2.04, "display": 3.3 },
-    { "label": "25/3", "uncached": 13.82, "cached": 2.14, "display": 3.4 },
-    { "label": "26/3", "uncached": 13.80, "cached": 2.20, "display": 3.1 },
-    { "label": "27/3", "uncached": 8.45, "cached": 2.09, "display": 2.9 },
-    { "label": "07/4", "uncached": 8.62, "cached": 2.24, "display": 3.1 },
-    { "label": "09/4", "uncached": 8.57, "cached": 2.20, "display": 2.6 },
-    { "label": "10/4", "uncached": 8.63, "cached": 2.22, "display": 2.4 },
-    { "label": "13/4", "uncached": 8.63, "cached": 2.20, "display": 2.5 }
-  ]
-}
-
-},{}],3:[function(require,module,exports){
 'use strict';
 
 var Chartist = require('chartist');
 var util = require('./util');
 
-var data = util.takeRight(require('../data.json').data, 30);
+util.getJson('src/data.json', function (res) {
+  var data = util.takeRight(res.data, 30);
 
-var options = {
-  low: 0,
-  axisY: {
-    labelInterpolationFnc: function (value) {
-      return value + 's';
-    }
-  },
-  lineSmooth: false
-};
+  var options = {
+    low: 0,
+    axisY: {
+      labelInterpolationFnc: function (value) {
+        return value + 's';
+      }
+    },
+    lineSmooth: false
+  };
 
-var loadData = {
-  labels: util.pluck(data, 'label'),
-  series: [
-    util.pluck(data, 'uncached'),
-    util.pluck(data, 'cached')
-  ]
-};
+  var loadData = {
+    labels: util.pluck(data, 'label'),
+    series: [
+      util.pluck(data, 'uncached'),
+      util.pluck(data, 'cached')
+    ]
+  };
 
-var displayData = {
-  labels: util.pluck(data, 'label'),
-  series: [
-    util.pluck(data, 'display')
-  ]
-};
+  var displayData = {
+    labels: util.pluck(data, 'label'),
+    series: [
+      util.pluck(data, 'display')
+    ]
+  };
 
-new Chartist.Line('.chart-load', loadData, options);
-new Chartist.Line('.chart-display', displayData, options);
+  new Chartist.Line('.chart-load', loadData, options);
+  new Chartist.Line('.chart-display', displayData, options);
+});
 
-},{"../data.json":2,"./util":4,"chartist":1}],4:[function(require,module,exports){
+},{"./util":3,"chartist":1}],3:[function(require,module,exports){
 'use strict';
 
 var util = module.exports = {};
+
+util.getJson = function (url, cb) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.responseType = 'json';
+
+  xhr.onload = function () {
+    cb(xhr.response, xhr);
+  };
+
+  xhr.send();
+
+  return xhr;
+};
 
 util.map = function (ary, fn) {
   return ary.map(fn);
@@ -3462,7 +3459,7 @@ util.takeRight = function (ary, n) {
   return ary.slice(-n);
 };
 
-},{}]},{},[3])
+},{}]},{},[2])
 
 
 //# sourceMappingURL=bundle.js.map
