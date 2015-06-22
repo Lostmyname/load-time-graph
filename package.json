@@ -19,7 +19,8 @@
   "scripts": {
     "commit-master": "git checkout master && git commit -am 'Added data'",
     "commit-gh": "git checkout gh-pages && git merge -m 'Merged master' master",
-    "commit": "npm run commit-master && npm run commit-gh && git push"
+    "commit": "npm run commit-master && npm run commit-gh && git push",
+    "discify": "rm -f disc.html && browserify --full-paths ~/Sites/lmn/eagle/src/js/script.js | discify > disc.html"
   },
   "license": "MIT",
   "private": true
