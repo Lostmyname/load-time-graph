@@ -65,6 +65,7 @@
     { "label": "14/7", "uncached": 7.06, "cached": 2.25, "display": 1.4 },
     { "label": "15/7", "uncached": 7.08, "cached": 2.30, "display": 1.4 },
     { "label": "13/8", "uncached": 13.92, "cached": 2.19, "display": 12.5 },
-    { "label": "19/8", "uncached": 17.29, "cached": 3.20, "display": 17.2 }
+    { "label": "19/8", "uncached": 17.29, "cached": 3.20, "display": 17.2 },
+    { "label": "20/8", "uncached": 17.21, "cached": 3.04, "display": 16.0 }
   ]
 }
