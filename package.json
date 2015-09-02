@@ -12,6 +12,7 @@
     "lmn.tarantula": "0.5.x"
   },
   "devDependencies": {
+    "babelify": "^6.3.0",
     "browser-sync": "^1.5.1",
     "gulp": "^3.8.8",
     "lmn-gulp-tasks": "^1.2.0"
@@ -20,7 +21,7 @@
     "commit-master": "git checkout master && git commit -am 'Added data'",
     "commit-gh": "git checkout gh-pages && git merge -m 'Merged master' master",
     "commit": "npm run commit-master && npm run commit-gh && git push",
-    "discify": "rm -f disc.html && browserify --full-paths ~/Sites/lmn/eagle/src/js/script.js | discify > disc.html"
+    "discify": "rm -f disc.html && browserify --full-paths -t babelify ~/Sites/lmn/eagle/src/js/script.js | discify > disc.html"
   },
   "license": "MIT",
   "private": true
