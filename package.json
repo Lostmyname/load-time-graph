@@ -18,10 +18,8 @@
     "lmn-gulp-tasks": "^1.2.0"
   },
   "scripts": {
-    "commit-master": "git checkout master && git commit -am 'Added data'",
-    "commit-gh": "git checkout gh-pages && git merge -m 'Merged master' master",
-    "commit": "npm run commit-master && npm run commit-gh && git push",
-    "discify": "rm -f disc.html && browserify --full-paths -t babelify ~/Sites/lmn/eagle/src/js/script.js | discify > disc.html"
+    "discify": "rm -f disc.html && browserify --full-paths -t babelify ~/Sites/lmn/eagle/src/js/script.js | discify > disc.html",
+    "commit": "git commit -am 'Update data' && git push"
   },
   "license": "MIT",
   "private": true
