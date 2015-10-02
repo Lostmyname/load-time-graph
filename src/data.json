@@ -82,6 +82,7 @@
     { "label": "24/9", "uncached": 7.99, "cached": 2.08, "display": 1.9 },
     { "label": "28/9", "uncached": 8.31, "cached": 2.16, "display": 2.0 },
     { "label": "29/9", "uncached": 8.40, "cached": 2.29, "display": 10.8 },
-    { "label": "30/9", "uncached": 8.55, "cached": 2.27, "display": 10.7 }
+    { "label": "30/9", "uncached": 8.55, "cached": 2.27, "display": 10.7 },
+    { "label": "02/10", "uncached": 8.47, "cached": 2.14, "display": 10.7 }
   ]
 }
